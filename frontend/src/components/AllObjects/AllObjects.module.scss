@@ -1,0 +1,62 @@
+.container {
+    width: 100%;
+    height: 100%;
+
+}
+
+.title {
+	display: flex;
+	justify-content: space-between;
+
+	margin: 10px 40px;
+
+	font-size: 25px;
+
+	color: #007bfb;
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px 0;
+	cursor: pointer;
+}
+
+.photo {
+	width: 90%;
+	height: 250px;
+	border-radius: 10px;
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+.name {
+	font-size: 20px;
+    font-weight: 600;
+}
+
+.inputItem {
+	width: 200px;
+    padding: 10px;
+    
+    border: 2px solid #c6c6c6;
+    border-radius: 10px;
+
+    &:hover {
+        border: 2px solid #007bfb;
+    }
+
+    &:focus {
+        outline: none;
+        border: 2px solid #007bfb;
+    }
+}

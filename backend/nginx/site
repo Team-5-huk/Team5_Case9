@@ -1,0 +1,13 @@
+server {
+        listen 80;
+        listen [::]:80;
+
+
+
+        location / {
+            root /home/servervf/case-19/frontend/build;
+            index  index.html;
+            try_files $uri $uri/ /index.html;
+        }
+
+}

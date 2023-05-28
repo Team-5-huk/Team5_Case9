@@ -1,0 +1,17 @@
+.inputItem {
+    width: calc(90% - 20px);
+
+    padding: 10px;
+    
+    border: 2px solid #c6c6c6;
+    border-radius: 10px;
+
+    &:hover {
+        border: 2px solid #007bfb;
+    }
+
+    &:focus {
+        outline: none;
+        border: 2px solid #007bfb;
+    }
+}

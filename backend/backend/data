@@ -1,0 +1,31 @@
+[
+{
+    "first_name": "Artyom",
+    "last_name": "test",
+    "email": "test@mail.ru",
+    "password": "test1"
+},
+
+{
+    "first_name": "user",
+    "last_name": "user",
+    "email": "user@user.ru",
+    "password": "user",
+    "role": "user"
+},
+
+{
+    "first_name": "admin",
+    "last_name": "admin",
+    "email": "admin@admin.ru",
+    "password": "admin",
+    "role": "admin"
+},
+{
+    "first_name": "employee",
+    "last_name": "employee",
+    "email": "employee@employee.ru",
+    "password": "employee",
+    "role": "employee"
+}
+]

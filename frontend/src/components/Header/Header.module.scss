@@ -1,0 +1,53 @@
+.container {
+	width: calc(100% - 160px);
+	height: 40px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	padding: 20px 80px;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	color: #007bfb;
+
+	-webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.6);
+	box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.6);
+    border-radius: 0 0 20px 20px;
+
+	background-color: white;
+
+	z-index: 1000;
+}
+
+.logo {
+	width: 150px;
+	cursor: pointer;
+}
+
+.account {
+	width: 90px;
+
+	display: flex;
+	justify-content: space-between;
+
+	padding: 5px 10px;
+
+	border-radius: 10px;
+	border: 1px solid #007bfb;
+
+	cursor: pointer;
+
+	&:hover {
+		background-color: #bbd9fa;
+	}
+}
+
+.title {
+	font-size: 25px;
+	font-weight: 700;
+}

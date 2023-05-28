@@ -1,0 +1,255 @@
+{
+    "pk": 3,
+    "url": "/project/ostafevo/",
+    "ref_id": "c151fc0d-9b43-e811-80de-005056b8d207",
+    "slug": "ostafevo",
+    "name": "Остафьево",
+    "link": "",
+    "coords": [
+        37.519628,
+        55.499735
+    ],
+    "start_sale": false,
+    "total_count": null,
+    "is_favorite": false,
+    "max_discount": 15.0,
+    "settling_end": "2025-03-30",
+    "settling_start": "2023-10-30",
+    "projecttag_set": [
+        {
+            "id": 421,
+            "order": 1,
+            "name": "Готовые корпуса",
+            "show": true,
+            "show_mob": true,
+            "is_red": false,
+            "is_new_project": false,
+            "color": "#FFFFFF",
+            "black_text": true
+        },
+        {
+            "id": 396,
+            "order": 2,
+            "name": "Московская регистрация",
+            "show": true,
+            "show_mob": true,
+            "is_red": false,
+            "is_new_project": false,
+            "color": "#FFFFFF",
+            "black_text": true
+        },
+        {
+            "id": 544,
+            "order": 3,
+            "name": "Скидка в офисе продаж",
+            "show": true,
+            "show_mob": true,
+            "is_red": false,
+            "is_new_project": false,
+            "color": "#FFFFFF",
+            "black_text": true
+        }
+    ],
+    "is_waiting_list": false,
+    "projectmetro_set": [
+        {
+            "id": 4,
+            "name": "Бунинская аллея",
+            "line_color": "#BAC8E8",
+            "is_diameter": false,
+            "icon": null,
+            "ppoi": "",
+            "order": 1,
+            "car_time": 10,
+            "walk_time": null,
+            "public_transport_time": null
+        },
+        {
+            "id": 71,
+            "name": "Щербинка",
+            "line_color": "#EA3F84",
+            "is_diameter": true,
+            "icon": "https://media.samolet.ru/metro/Moskwa_Metro_Line_D2_1.svg",
+            "ppoi": "",
+            "order": 2,
+            "car_time": null,
+            "walk_time": 30,
+            "public_transport_time": null
+        }
+    ],
+    "projectslider_set": [
+        {
+            "id": 23,
+            "order": 1,
+            "image": "https://media.samolet.ru/project/slider/_4-_15-16-__2022-09-01.jpg",
+            "image_src": {
+                "default": "https://media.samolet.ru/CACHE/images/project/slider/_4-_15-16-__2022-09-01/34670e464f18f9345d8d87f38a74a542.jpg",
+                "webp": "https://media.samolet.ru/CACHE/images/project/slider/_4-_15-16-__2022-09-01/6c5e4580ce757f1ce50a1278c774f16e.webp"
+            },
+            "image_src_blurred": {
+                "default": "https://media.samolet.ru/CACHE/images/project/slider/_4-_15-16-__2022-09-01/736b4bd0256c2ae8860ac2992bdf823a.jpg",
+                "webp": "https://media.samolet.ru/CACHE/images/project/slider/_4-_15-16-__2022-09-01/4e6ff065bad55612434a7b236dbfa30c.webp"
+            },
+            "image_src_mobile": {
+                "default": null,
+                "webp": null
+            }
+        },
+        {
+            "id": 24,
+            "order": 2,
+            "image": "https://media.samolet.ru/project/slider/_814918-2_jzl0QM8.jpg",
+            "image_src": {
+                "default": "https://media.samolet.ru/CACHE/images/project/slider/_814918-2_jzl0QM8/8020fd93fec3f5c5e1187fd120a2ad62.jpg",
+                "webp": "https://media.samolet.ru/CACHE/images/project/slider/_814918-2_jzl0QM8/c07c3f2e1fc9c5b674af727023823c2b.webp"
+            },
+            "image_src_blurred": {
+                "default": "https://media.samolet.ru/CACHE/images/project/slider/_814918-2_jzl0QM8/6d61c5c251d4ff4d4dba7d47f61a8df7.jpg",
+                "webp": "https://media.samolet.ru/CACHE/images/project/slider/_814918-2_jzl0QM8/e5a0915ed4010de8090b4fa00017ef8b.webp"
+            },
+            "image_src_mobile": {
+                "default": null,
+                "webp": null
+            }
+        },
+        {
+            "id": 25,
+            "order": 3,
+            "image": "https://media.samolet.ru/project/slider/.png_8G3L75k",
+            "image_src": {
+                "default": "https://media.samolet.ru/CACHE/images/project/slider/.png_8G3L75k/09c9cfe5c83d118bc07e771098eb45b5.jpg",
+                "webp": "https://media.samolet.ru/CACHE/images/project/slider/.png_8G3L75k/dbdf6f0a39c27ae7195e8f00d144025a.webp"
+            },
+            "image_src_blurred": {
+                "default": "https://media.samolet.ru/CACHE/images/project/slider/.png_8G3L75k/4c7add3b2fae01a0efdb930880adc83f.jpg",
+                "webp": "https://media.samolet.ru/CACHE/images/project/slider/.png_8G3L75k/7ac254c13d1fe99efe4cf6d6d0873d9c.webp"
+            },
+            "image_src_mobile": {
+                "default": null,
+                "webp": null
+            }
+        }
+    ],
+    "decoration_included": true,
+    "min_price": 5579415,
+    "image_src": {
+        "default": "https://media.samolet.ru/CACHE/images/project/card_image/%D0%9E%D1%81%D1%82%D0%B0%D1%84%D1%8C%D0%B5%D0%B2%D0%BE_5_%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D1%8C_20-23_%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%B8%D0%BC%D0%B8%D0%B4%D0%B6_2023-03-14/7f14a0ee088429abf1820dff599394ad.jpg",
+        "webp": "https://media.samolet.ru/CACHE/images/project/card_image/%D0%9E%D1%81%D1%82%D0%B0%D1%84%D1%8C%D0%B5%D0%B2%D0%BE_5_%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D1%8C_20-23_%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%B8%D0%BC%D0%B8%D0%B4%D0%B6_2023-03-14/a2c49cf0acab16d704bdaef358cc2aee.webp"
+    },
+    "image_src_wide": {
+        "default": null,
+        "webp": null
+    },
+    "image_src_wide_mobile": {
+        "default": null,
+        "webp": null
+    },
+    "image_src_blurred": {
+        "default": "https://media.samolet.ru/CACHE/images/project/card_image/%D0%9E%D1%81%D1%82%D0%B0%D1%84%D1%8C%D0%B5%D0%B2%D0%BE_5_%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D1%8C_20-23_%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%B8%D0%BC%D0%B8%D0%B4%D0%B6_2023-03-14/572a76301f12e7eb29c43f52e739581c.jpg",
+        "webp": "https://media.samolet.ru/CACHE/images/project/card_image/%D0%9E%D1%81%D1%82%D0%B0%D1%84%D1%8C%D0%B5%D0%B2%D0%BE_5_%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D1%8C_20-23_%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%B8%D0%BC%D0%B8%D0%B4%D0%B6_2023-03-14/16b1892ec3623408455bbc437fa4489b.webp"
+    },
+    "image_src_wide_blurred": {
+        "default": null,
+        "webp": null
+    },
+    "map_card": {
+        "default": "https://media.samolet.ru/CACHE/images/project/map_card/.png_r8CA3rr/84a974dadbedb4804bf56991650be266.jpg",
+        "webp": "https://media.samolet.ru/CACHE/images/project/map_card/.png_r8CA3rr/5d6135a9ae4561fe43de0a8ce3684e76.webp"
+    },
+    "map_card_wide": {
+        "default": "https://media.samolet.ru/CACHE/images/project/map_card_wide/.png_bVI4U1e/de48e0dc78a1a4638e545224a823c0ee.jpg",
+        "webp": "https://media.samolet.ru/CACHE/images/project/map_card_wide/.png_bVI4U1e/086386ccf32cb557a353f44fc9e7f50a.webp"
+    },
+    "map_card_blurred": {
+        "default": "https://media.samolet.ru/CACHE/images/project/map_card/.png_r8CA3rr/cd7ece0d6ba9c5da4f9046e0fa21e0bd.jpg",
+        "webp": "https://media.samolet.ru/CACHE/images/project/map_card/.png_r8CA3rr/93762d90b454ae466e22f9b5bbd5cfaa.webp"
+    },
+    "map_card_wide_blurred": {
+        "default": "https://media.samolet.ru/CACHE/images/project/map_card_wide/.png_bVI4U1e/bc894fb7926bbc1d74fa94b812e51d97.jpg",
+        "webp": "https://media.samolet.ru/CACHE/images/project/map_card_wide/.png_bVI4U1e/d7837478813e2af43fbb9e98960bbf68.webp"
+    },
+    "flat_tooltip": [
+        {
+            "rooms": 0,
+            "min_price": 5085150,
+            "min_area": 22.29
+        },
+        {
+            "rooms": 1,
+            "min_price": 6927337,
+            "min_area": 26.04
+        },
+        {
+            "rooms": 2,
+            "min_price": 7377610,
+            "min_area": 32.11
+        },
+        {
+            "rooms": 3,
+            "min_price": 9998076,
+            "min_area": 50.59
+        },
+        {
+            "rooms": 4,
+            "min_price": 11632710,
+            "min_area": 70.41
+        }
+    ],
+    "image_src_high": {
+        "default": "https://media.samolet.ru/CACHE/images/project/card_image/%D0%9E%D1%81%D1%82%D0%B0%D1%84%D1%8C%D0%B5%D0%B2%D0%BE_5_%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D1%8C_20-23_%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%B8%D0%BC%D0%B8%D0%B4%D0%B6_2023-03-14/cb5acafda0e56e88d10b776f097b66ac.jpg",
+        "webp": "https://media.samolet.ru/CACHE/images/project/card_image/%D0%9E%D1%81%D1%82%D0%B0%D1%84%D1%8C%D0%B5%D0%B2%D0%BE_5_%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D1%8C_20-23_%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%B8%D0%BC%D0%B8%D0%B4%D0%B6_2023-03-14/0fcd26bffc42ac34b0e6c7c0a921d3b1.webp"
+    },
+    "image_src_high_blurred": {
+        "default": "https://media.samolet.ru/CACHE/images/project/card_image/%D0%9E%D1%81%D1%82%D0%B0%D1%84%D1%8C%D0%B5%D0%B2%D0%BE_5_%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D1%8C_20-23_%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%B8%D0%BC%D0%B8%D0%B4%D0%B6_2023-03-14/eb13ffbafcecf61b27b029f466cfa0de.jpg",
+        "webp": "https://media.samolet.ru/CACHE/images/project/card_image/%D0%9E%D1%81%D1%82%D0%B0%D1%84%D1%8C%D0%B5%D0%B2%D0%BE_5_%D0%BE%D1%87%D0%B5%D1%80%D0%B5%D0%B4%D1%8C_20-23_%D0%BA%D0%BE%D1%80%D0%BF%D1%83%D1%81_%D0%B8%D0%BC%D0%B8%D0%B4%D0%B6_2023-03-14/b177385abf8d1b04394373bee7b19fd2.webp"
+    },
+    "image_src_high_mobile": {
+        "default": null,
+        "webp": null
+    },
+    "rename_flat_to_plan": false,
+    "has_apartments": false,
+    "address": "",
+    "business_class": false,
+    "projecttrait_set": [
+        {
+            "id": 37,
+            "name": "Транспортная доступность",
+            "text": "10 минут на авто до метро «Бунинская аллея»",
+            "icon": "https://media.samolet.ru/project/traits/Nametram_Size64_yRK6FX1.svg",
+            "order": 1,
+            "for_business_class": false
+        },
+        {
+            "id": 40,
+            "name": "Благоустройство",
+            "text": "Cвой парк 6 га и Playhub",
+            "icon": "https://media.samolet.ru/project/traits/Namepark_Size64_YJSOLjI.svg",
+            "order": 2,
+            "for_business_class": false
+        },
+        {
+            "id": 38,
+            "name": "Новая Москва",
+            "text": "Московская регистрация",
+            "icon": "https://media.samolet.ru/project/traits/sm_KR6Pcvk.svg",
+            "order": 3,
+            "for_business_class": false
+        },
+        {
+            "id": 39,
+            "name": "Инфраструктура",
+            "text": "3 школы, 6 детских садов",
+            "icon": "https://media.samolet.ru/project/traits/Nameschool_Size64_fFu8g3R.svg",
+            "order": 4,
+            "for_business_class": false
+        }
+    ],
+    "is_business_color": false,
+    "projectwideslider_set": [],
+    "individual_decoration": true,
+    "flat_count": 1287,
+    "is_announced": false,
+    "display_in_large_card": false,
+    "is_domrf": false
+}
