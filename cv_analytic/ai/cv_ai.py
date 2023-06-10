@@ -4,7 +4,6 @@ import tensorflow as tf
 import tensorflow_hub as hub
 import cv2 as cv
 import numpy as np
-import time
 from sklearn.cluster import AgglomerativeClustering
 import pandas as pd
 import typing
@@ -21,6 +20,16 @@ allowed_classes = ['Toilet',
                    'Shelf',
                    'Chair',
                    ]
+
+RU_NAMES = {
+    'Toilet': 'Туалет',
+    'Oven': 'Печь',
+    'Sink': 'Кран',
+    'Tap': 'Раковина',
+    'Shelf': 'Шкаф',
+    'Chair': 'Стул'
+}
+
 seed = 2023
 
 
@@ -59,7 +68,7 @@ def class_detection(frame: cv.Mat, list_of_rooms_with_windows: list, lst_of_door
     if window_count == 1:
         list_of_rooms_with_windows.append(
             [frame_count, window_score])
-        return (frame[:top], True)
+        return (frame[:top], True) if frame[:top].shape[0] != 0 else (frame, False)
     return (frame, False)
 
 
@@ -86,12 +95,11 @@ def check_walls(frame: cv.Mat) -> None:
 
 
 def cv_detection(video: str):
-    # Тут захват видео
     cap = cv.VideoCapture(video)
     fps = cap.get(cv.CAP_PROP_FPS)
     N_SKIPPED_FRAMES: int = fps if fps < 10 else fps // 6
     frame_count = 0
-
+    READY_PRECENTAGE: int = 90
     lst_of_rooms_with_windows = []
     lst_of_objects = []
     lst_of_doors = []
@@ -110,6 +118,7 @@ def cv_detection(video: str):
                 #
                 # frame_count: счетчик для кадров
                 frame_count += 1
+                # frame_count % N_SKIPPED_FRAMES == 0
                 if frame_count % N_SKIPPED_FRAMES == 0:
                     '''
                     детекция объектов на кадре
@@ -125,35 +134,62 @@ def cv_detection(video: str):
             else:
                 break
         # Тут чтение видео заканчивается, начинается обработка данных
+        
         arr_winds = np.array([np.array([lst_of_rooms_with_windows[i][0], lst_of_rooms_with_windows[i][0]])
                               for i in range(len(lst_of_rooms_with_windows))])
+
+        
         output = AgglomerativeClustering(
             n_clusters=None, distance_threshold=200).fit_predict(arr_winds)
+        
+        
         for i in range(len(lst_of_rooms_with_windows)):
             lst_of_rooms_with_windows[i].append(output[i])
-
+        
         arr_doors = np.array([np.array([lst_of_doors[i][0], lst_of_doors[i][0]])
                               for i in range(len(lst_of_doors))])
-        output = AgglomerativeClustering(
-            n_clusters=None, distance_threshold=100).fit_predict(arr_doors)
-        for i in range(len(lst_of_doors)):
-            lst_of_doors[i].append(output[i])
-
+        
+        door_flag = True
+        if len(arr_doors) != 0:
+            output = AgglomerativeClustering(
+                n_clusters=None, distance_threshold=100).fit_predict(arr_doors)
+            for i in range(len(lst_of_doors)):
+                lst_of_doors[i].append(output[i])
+            df_doors = pd.DataFrame(data=lst_of_doors, columns=[
+                "Frame_count", "Score", "Class"])
+        else: door_flag = False
+        
         df_wind = pd.DataFrame(data=lst_of_rooms_with_windows, columns=[
             "Frame_count", "Score", "Ceiling", "Class"])
-
-        df_doors = pd.DataFrame(data=lst_of_doors, columns=[
-            "Frame_count", "Score", "Class"])
 
         df_objects = pd.DataFrame(data=lst_of_objects, columns=[
             "Name", "Frame_count", "Score"
         ])
 
+        # dr
+        # cr
+        # toilet
+        # oven
+
         result = {
-            "Door_ready": len(df_doors['Class'].unique()) >= len(df_wind['Class'].unique()),
+            "Door_ready": len(df_doors['Class'].unique()) > len(df_wind['Class'].unique()) if door_flag else False,
             "Ceiling_ready": df_wind['Ceiling'].mean() >= 0.7,
             "Detected_objects": df_objects[df_objects.groupby('Name')['Score'].transform(max) == df_objects['Score']].to_dict('records')
         }
+
+        if not result['Door_ready']:
+            READY_PRECENTAGE -= 30
+        if not result['Ceiling_ready']:
+            READY_PRECENTAGE -= 30
+
+        t_flag = False
+        for i in result['Detected_objects']:
+            if i['Name'] == 'Toilet':
+                t_flag = True
+            i['Name'] = RU_NAMES[i['Name']]
+        if not t_flag:
+            READY_PRECENTAGE -= 30
+        result['Ready_precentage'] = 0 if READY_PRECENTAGE == 10 else READY_PRECENTAGE
         return result
     except Exception as e:
         print(e)
@@ -164,5 +200,4 @@ def cv_detection(video: str):
 
 
 if __name__ == '__main__':
-    output = cv_detection("/home/servervf/case-19/cv_analytic/data/4.mp4")
-    print(output)
+    output = cv_detection("../data/1.mp4")

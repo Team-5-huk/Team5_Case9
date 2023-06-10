@@ -50,7 +50,7 @@ const Admin = observer(() => {
 		<div className={styles.container}>
 			<AllObjects 
 				data={allObjects}
-				title={'Выберите ЖК для отслеживания прогресса'} 
+				title={'Выберите ЖК'} 
 				openCreateModal={openCreateModal} 
 				handleSelectObject={(id) => selectObject(id)} 
 			/>

@@ -1,0 +1,32 @@
+.title {
+	display: flex;
+	align-items: center;
+
+	margin: 10px 0;
+
+	font-size: 25px;
+
+	color: #007bfb;
+}
+
+.tableTitle {
+	font-size: 20px;
+
+	color: #007bfb;
+}
+
+.backVideo {
+	border-radius: 10px;
+    max-width: 100%;
+}
+
+.infoBlock {
+	max-width: 500px;
+	min-width: 300px;
+	display: flex;
+	flex-direction: column;
+
+	margin: 10px 0;
+
+	color: #007bfb;
+}

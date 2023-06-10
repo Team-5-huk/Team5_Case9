@@ -1,0 +1,15 @@
+[Unit]
+Description=My test service
+After=multi-user.target
+
+
+[Service]
+User=root
+Type=simple
+Restart=on-failure
+RestartSec=5s
+WorkingDirectory=/home/servervf/case-19/backend/backend
+ExecStart=sudo /home/servervf/case-19/backend/venv/bin/gunicorn --timeout 600 --workers 5 --bind 0.0.0.0:8030 core.wsgi:application
+
+[Install]
+WantedBy=multi-user.target

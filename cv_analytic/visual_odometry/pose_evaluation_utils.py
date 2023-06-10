@@ -228,3 +228,18 @@ def dump_pose_seq_TUM(out_file, poses, times):
             rot = this_pose[:3, :3]
             qw, qx, qy, qz = rot2quat(rot)
             f.write('%f %f %f %f %f %f %f %f\n' % (times[p], tx, ty, tz, qx, qy, qz, qw))
+
+def rep_error_fn(opt_variables, points_2d, num_pts):
+    P = opt_variables[0:12].reshape(3,4)
+    point_3d = opt_variables[12:].reshape((num_pts, 4))
+
+    rep_error = []
+
+    for idx, pt_3d in enumerate(point_3d):
+        pt_2d = np.array([points_2d[0][idx], points_2d[1][idx]])
+
+        reprojected_pt = np.matmul(P, pt_3d)
+        reprojected_pt /= reprojected_pt[2]
+
+        print("Reprojection Error \n" + str(pt_2d - reprojected_pt[0:2]))
+        rep_error.append(pt_2d - reprojected_pt[0:2])

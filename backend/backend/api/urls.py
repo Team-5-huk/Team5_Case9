@@ -5,7 +5,6 @@ from rest_framework import routers
 from api.views import *
 
 router = routers.DefaultRouter() #SimpleRouter
-
 router.register(r'projects', ProjectApiView)
 router.register(r'buildings', BuildingApiView)
 router.register(r'sections', SectionApiView)

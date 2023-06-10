@@ -10,10 +10,10 @@ const App = observer(() => {
 	const { authUser } = store;
 
 	const routes = {
-		'': <NoAccessRole />,
-		'employee': <EmployeeRoutes />,
-		'admin': <AdminRoutes />,
-		'user': <ClientRoutes />,
+		logout: <NoAccessRole />,
+		employee: <EmployeeRoutes />,
+		admin: <AdminRoutes />,
+		user: <ClientRoutes />,
 	};
 
 	return <div className={styles.app}>{routes[authUser]}</div>;

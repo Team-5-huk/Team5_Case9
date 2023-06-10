@@ -9,10 +9,9 @@ import store from '../../../store/store';
 
 const Apartments = observer(() => {
 	const { linkGetFlats } = linksStore;
-	const { apartments, setApartments } = store;
+	const { apartments, setApartments, setNumberFlat } = store;
 	const navigate = useNavigate();
 	const { object, frame, section } = useParams();
-	const [floors, setFloors] = useState([]);
 
 	useEffect(() => {
 		getFlats(`${linkGetFlats}${section}/getflats/`);
@@ -22,12 +21,16 @@ const Apartments = observer(() => {
 		apiGetProjects(url).then(({ data, error }) => {
 			setApartments(
 				data
-					.reduce((acc, { floor, number }) => {
+					.reduce((acc, { id, floor, number, Ready_precentage, checks }) => {
 						const floorObj = acc.find((f) => f.floor === floor);
 						if (!floorObj) {
-							acc.push({ id: acc.length + 1, floor, apartaments: [`${number}`] });
+							acc.push({
+								id: acc.length + 1,
+								floor,
+								apartaments: [{ id, number, Ready_precentage, checks, isSelected: false }],
+							});
 						} else {
-							floorObj.apartaments.push(`${number}`);
+							floorObj.apartaments.push({ id, number, Ready_precentage, checks, isSelected: false });
 						}
 						return acc;
 					}, [])
@@ -36,6 +39,39 @@ const Apartments = observer(() => {
 			);
 			console.log(error);
 		});
+	};
+
+	const selectFlat = (id, number) => {
+		setNumberFlat(number);
+		navigate(`/employee/${object}/${frame}/${section}/${id}/camera`);
+	};
+
+	const onMouseEnter = (select) => {
+		const flat = apartments.reduce((result, { apartaments }) => {
+			if (!result) {
+			  const found = apartaments.find((a) => a.id === select);
+			  if (found) {
+				return found;
+			  }
+			}
+			return result;
+		  }, null);
+		
+		  flat.isSelected = true;
+	};
+
+	const onMouseLeave = (select) => {
+		const flat = apartments.reduce((result, { apartaments }) => {
+			if (!result) {
+			  const found = apartaments.find((a) => a.id === select);
+			  if (found) {
+				return found;
+			  }
+			}
+			return result;
+		  }, null);
+		
+		  flat.isSelected = false;
 	};
 
 	return (
@@ -52,15 +88,25 @@ const Apartments = observer(() => {
 				{apartments.map(({ floor, apartaments }) => {
 					return (
 						<div className={styles.floor} key={floor}>
-							{floor}
-							{apartaments.map((apartament) => {
+							<div style={{width: '40px', height: '40px'}}>{floor}</div>
+							{apartaments.map(({ id, number, Ready_precentage, isSelected }) => {
+								const t = Math.min(Math.max(Ready_precentage, 0), 100);
+								const r = Math.round(255 * Math.min((100 - t) / 50, 1));
+								const g = Math.round(255 * Math.min(t / 50, 1));
+								const background = `rgba(${r}, ${g}, 0, 0.3)`;
+
+								const content = isSelected ? `${Ready_precentage}%` : number;
+
 								return (
 									<div
+										key={id}
+										style={{ background }}
 										className={styles.apartament}
-										key={apartament}
-										onClick={() => navigate(`/employee/${object}/${frame}/${section}/${apartament}/camera`)}
+										onMouseEnter={() => onMouseEnter(id)}
+										onMouseLeave={() => onMouseLeave(id)}
+										onClick={() => selectFlat(id, number)}
 									>
-										{apartament}
+										{content}
 									</div>
 								);
 							})}

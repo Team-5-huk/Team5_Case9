@@ -4,6 +4,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.core.exceptions import ValidationError
+import datetime
+from django.core.validators import FileExtensionValidator
 
 def validate_file_size(value):
     filesize= value.size
@@ -78,10 +80,26 @@ class Flat(models.Model):
     #building = models.ForeignKey(Building, on_delete=models.PROTECT)
     section = models.ForeignKey(Section, on_delete=models.PROTECT)
     number = models.IntegerField(blank=True, null=True)
+    Ready_precentage = models.FloatField(default=0.0, blank=True, null=True)
+    square = models.FloatField(blank=True, null=True, default=0.0)
 
 class Check(models.Model):
-    flat = models.ForeignKey(Flat, on_delete=models.PROTECT)
+    flat = models.ForeignKey(Flat,related_name='checks', on_delete=models.PROTECT, blank=True, null=True)
     video = models.FileField(blank=True, null=True, validators=[validate_file_size], upload_to='checks/')
     analysis = models.JSONField(blank=True, null=True, default = list)
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateField(default=datetime.date.today)
     is_analysed = models.BooleanField(default=False)
+    analys_image = models.ImageField(blank=True, null=True, upload_to='analys_images/',validators=[FileExtensionValidator(['jpg', 'png','','*'])])
+    analys_square = models.FloatField(blank=True, null=True, default=0.0)
+
+
+@receiver(post_save, sender=Check)
+def update_check(sender, instance, created, **kwargs):
+    if instance.analysis:
+        try:
+            perc = float(instance.analysis["Ready_precentage"])
+            flat = Flat.objects.get(pk=instance.flat.pk)
+            flat.Ready_precentage = perc
+            flat.save()
+        except:
+            pass

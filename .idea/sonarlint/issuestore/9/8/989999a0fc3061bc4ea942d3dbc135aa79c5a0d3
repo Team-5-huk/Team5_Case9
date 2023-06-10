@@ -1,0 +1,8 @@
+
+Qjavascript:S1128"0Remove this unused import of 'apiCreateProject'.(ç™ïÑùÿÿÿÿ
+ajavascript:S1481
+"@Remove the declaration of the unused 'linkGetProjects' variable.(ãïåÁøÿÿÿÿ
+^javascript:S1854
+"=Remove this useless assignment to variable "linkGetProjects".(ãïåÁøÿÿÿÿ
+:javascript:S125"Remove this commented out code.(àŸÛ§
+?javascript:S125"Remove this commented out code.(µš¢Öûÿÿÿÿ

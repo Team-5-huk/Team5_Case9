@@ -1,12 +1,12 @@
 .container {
-	width: calc(100% - 160px);
+	width: calc(100% - 80px);
 	height: 40px;
 
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 
-	padding: 20px 80px;
+	padding: 20px 40px;
 
 	position: absolute;
 	top: 0;
@@ -45,9 +45,4 @@
 	&:hover {
 		background-color: #bbd9fa;
 	}
-}
-
-.title {
-	font-size: 25px;
-	font-weight: 700;
 }

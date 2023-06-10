@@ -9,7 +9,21 @@ samolet_url_project_buildings = Template(r'https://samolet.ru/v1/api/project/{{ 
 samolet_url_section_chessboard = Template(r'https://samolet.ru/v1/api/flat/chessboard/?building={{ building_pk }}&')
 samolet_url_sction_floors_info = Template(r'https://samolet.ru/v1/api/section/{{ section_pk }}}/floors/')
 
+backend_url_auth = r'http://87.244.7.150:8000/api/user/login/'
+backend_url_get_projects = r'http://87.244.7.150:8000/api/samolet/projects/'
+
 PROJECTS_DICT = {}
+
+def get_added_projects():
+    with requests.Session() as session:
+        projects_pk =[]
+        session.post(backend_url_auth, json={"email": "test@mail.ru", "password": "test1"})
+        response = session.get(backend_url_get_projects)
+        for i in response.json():
+            projects_pk.append(i["samolet_pk"])
+        return projects_pk
+
+IGNORE_PROJECT_samolet_pk = get_added_projects()
 
 def get_samolet_projects():
     response = requests.get(samolet_url_projects)
@@ -30,6 +44,12 @@ def get_samolet_projects():
             "longitude": longitude,
             "image_src": image_src
         }
+    for key in IGNORE_PROJECT_samolet_pk:
+        try:
+            del PROJECTS_DICT[key]
+        except:
+            pass
+    print(PROJECTS_DICT)
     return PROJECTS_DICT
 
 def get_project_info(slug):
@@ -72,7 +92,6 @@ def get_buildings_in_project(priject_pk):
         })
     return buildings_dict
 
-
 if __name__ == '__main__':
     PROJECTS_DICT = get_samolet_projects()
     for pk in PROJECTS_DICT.keys():
@@ -83,4 +102,3 @@ if __name__ == '__main__':
         PROJECTS_DICT[pk]["building_set"] = building_dict
         print(PROJECTS_DICT[pk])
         time.sleep(1)
-

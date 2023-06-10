@@ -9,7 +9,8 @@ import ListCompleted from '../../../components/ListCompleted/ListCompleted';
 import { observer } from 'mobx-react-lite';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import linksStore from '../../../store/linksStore';
-import {apiGetProjects} from '../../../api/api';
+import { apiGetProjects } from '../../../api/api';
+import { Box } from '@mui/material';
 
 const columns = [
 	{ field: 'id', headerName: 'ID' },
@@ -22,7 +23,7 @@ const columns = [
 
 const ListFrames = observer(() => {
 	const { frames, setFrames, employees } = store;
-	const {linkGetProjects} = linksStore;
+	const { linkGetProjects } = linksStore;
 	const { object } = useParams();
 	const navigate = useNavigate();
 	const [isOpenModal, setOpenModal] = useState(false);
@@ -32,19 +33,21 @@ const ListFrames = observer(() => {
 	}, []);
 
 	const getBuildings = (url = '') => {
-		apiGetProjects(url).then(({data, error}) => {
-			setFrames(data.map(({floors_total, name, plan, samolet_pk}) => {
-				return {
-					id: samolet_pk,
-					name,
-					floors: floors_total,
-					photo: plan,
-					isShow: false
-				}
-			}));
+		apiGetProjects(url).then(({ data, error }) => {
+			setFrames(
+				data.map(({ floors_total, name, plan, samolet_pk }) => {
+					return {
+						id: samolet_pk,
+						name,
+						floors: floors_total,
+						photo: plan,
+						isShow: false,
+					};
+				})
+			);
 			// console.log(data);
 			console.log(error);
-		})
+		});
 	};
 
 	const openCreateModal = () => {
@@ -59,23 +62,26 @@ const ListFrames = observer(() => {
 		<div className={styles.container}>
 			<div className={styles.title}>
 				<ArrowBackIosNewIcon sx={{ color: '#007bfb', cursor: 'pointer' }} onClick={() => navigate('/admin')} />
-				Квартал Строгино
+				Выберите корпус
 			</div>
 
-			<div className={styles.frames}>
+
+			<Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
 				{frames.map(({ id, name, floors, photo }) => {
 					return (
 						<div key={id} className={styles.frame} onClick={() => navigate(`/admin/${object}/${id}`)}>
-							{name}
-							<div>Кол-во этажей: {floors}</div>
-							<img style={{width: '100px'}} src={photo}/>
+							<img className={styles.photo} src={photo} />
+							<div className={styles.titleFrame}>
+								{name}
+								{/* <div>Кол-во этажей: {floors}</div> */}
+							</div>
 						</div>
 					);
 				})}
-			</div>
+			</Box>
 
-			<CustomButton name="+ Добавить корпус" handleClick={openCreateModal} />
-
+			<CustomButton name="+ Добавить корпус" width={'155px'} handleClick={openCreateModal} />
+			
 			<ViewModal title="Новый корпус" isModal={isOpenModal} closeModal={closeCreateModal}>
 				<CreateFrame closeModal={closeCreateModal} />
 			</ViewModal>

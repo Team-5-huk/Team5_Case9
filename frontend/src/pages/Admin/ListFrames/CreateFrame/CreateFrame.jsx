@@ -53,7 +53,7 @@ const CreateFrame = ({ closeModal }) => {
 					onChange={(e) => setCountFloors(e)}
 				/>
 			</div>
-			<CustomButton name="Создать" handleClick={createNewObject} />
+			<CustomButton name="Создать" width={'85px'} handleClick={createNewObject} />
 		</div>
 	);
 };

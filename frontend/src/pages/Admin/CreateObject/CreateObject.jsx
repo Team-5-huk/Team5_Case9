@@ -44,7 +44,7 @@ const CreateObject = observer(({ closeModal }) => {
 
 				<CustomInput type="text" placeholder="Ширина" value={longitude} onChange={(e) => setLongitude(e)} />
 			</div>
-			<CustomButton name="Создать" handleClick={createNewObject} />
+			<CustomButton name="Создать" width={'85px'} handleClick={createNewObject} />
 		</div>
 	);
 });

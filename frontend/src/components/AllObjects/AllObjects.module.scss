@@ -5,33 +5,28 @@
 }
 
 .title {
+	width: 200px;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
 
-	margin: 10px 40px;
+	margin-bottom: 20px;
 
 	font-size: 25px;
 
 	color: #007bfb;
 }
 
-.cards {
-	display: flex;
-	flex-wrap: wrap;
-}
-
 .card {
-	width: 50%;
+	width: 350px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	margin: 10px 0;
+	align-items: flex-start;
+	margin-bottom: 15px;
 	cursor: pointer;
 }
 
 .photo {
-	width: 90%;
-	height: 250px;
+	height: 300px;
 	border-radius: 10px;
 
 	&:hover {
@@ -45,7 +40,6 @@
 }
 
 .inputItem {
-	width: 200px;
     padding: 10px;
     
     border: 2px solid #c6c6c6;

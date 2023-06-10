@@ -1,0 +1,23 @@
+
+Hpython:S5806"+Rename this variable; it shadows a builtin.(Ÿ§ãòûÿÿÿÿ
+Cpython:S5806"+Rename this variable; it shadows a builtin.(•¾ø”
+dpython:S1175"MRename this parameter "R" to match the regular expression ^[_a-z][a-z0-9_]*$.(ëé³
+jpython:S117="SRename this local variable "Nq" to match the regular expression ^[_a-z][a-z0-9_]*$.(¹—ž÷
+jpython:S117D"SRename this local variable "wX" to match the regular expression ^[_a-z][a-z0-9_]*$.(úÑ”Ÿ
+jpython:S117E"SRename this local variable "wY" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ø™œ®
+jpython:S117F"SRename this local variable "wZ" to match the regular expression ^[_a-z][a-z0-9_]*$.(™é™À
+opython:S117G"SRename this local variable "xX" to match the regular expression ^[_a-z][a-z0-9_]*$.(«‰ìþÿÿÿÿ
+opython:S117H"SRename this local variable "xY" to match the regular expression ^[_a-z][a-z0-9_]*$.(§ÄþÔùÿÿÿÿ
+jpython:S117I"SRename this local variable "xZ" to match the regular expression ^[_a-z][a-z0-9_]*$.(œëÓ
+opython:S117J"SRename this local variable "yY" to match the regular expression ^[_a-z][a-z0-9_]*$.(„îœúÿÿÿÿ
+jpython:S117K"SRename this local variable "yZ" to match the regular expression ^[_a-z][a-z0-9_]*$.(×‡‹ó
+jpython:S117L"SRename this local variable "zZ" to match the regular expression ^[_a-z][a-z0-9_]*$.(êÒÀ¢
+ipython:S117S"MRename this parameter "M" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ö½¹¤ýÿÿÿÿ
+qpython:S3776S"TRefactor this function to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ö½¹¤ýÿÿÿÿ
+Upython:S112u">Replace this generic exception class with a more specific one.(ÞÛÉ¿
+kpython:S117…"SRename this local variable "Ms" to match the regular expression ^[_a-z][a-z0-9_]*$.(¸îŸú
+kpython:S117|"TRename this parameter "isRadian" to match the regular expression ^[_a-z][a-z0-9_]*$.(Š»ÏŽ
+lpython:S117 "TRename this parameter "isRadian" to match the regular expression ^[_a-z][a-z0-9_]*$.(Äïƒ©
+rpython:S117»"URename this local variable "Tmat" to match the regular expression ^[_a-z][a-z0-9_]*$.(¦£ØÈýÿÿÿÿ
+rpython:S117È"URename this local variable "Tmat" to match the regular expression ^[_a-z][a-z0-9_]*$.(¦£ØÈýÿÿÿÿ
+ppython:S1542Û"WRename function "dump_pose_seq_TUM" to match the regular expression ^[a-z_][a-z0-9_]*$.(©ÎšÃ

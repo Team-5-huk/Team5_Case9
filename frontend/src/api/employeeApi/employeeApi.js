@@ -1,32 +1,21 @@
-export const apiPostFile = async (url = '',file, id, analysis, date, is_analysed, flat) => {
+export const apiPostFile = async (url = '',file, apartament) => {
 	const serverData = {
 		ans: { status: null, statusText: '' },
 		error: { isError: false, errorText: '' },
 		data: [],
 	};
-	console.log(file);
+
     const formData = new FormData();
     formData.append('video', file);
-
-	const data = {
-		id,
-        video: formData,
-        analysis,
-        date,
-        is_analysed,
-        flat
-	}
-
-	console.log(data);
+	formData.append('flat', apartament);
 
 	const options = {
 		method: 'POST',
 		mode: 'cors',
 		headers: {
-			'Content-Type': 'multipart/form-data',
 			Authorization: `Bearer ${localStorage.getItem('token')}`,
 		},
-        body: JSON.stringify( data ),
+        body: formData,
 	};
 
 	try {

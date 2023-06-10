@@ -5,6 +5,9 @@ import { observer } from 'mobx-react-lite';
 import { apiGetProjects } from '../../../api/api';
 import { useParams, useNavigate } from 'react-router-dom';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { Box } from '@mui/material';
+import styles from './Sections.module.scss';
+import photo from '../../../assets/section.jpg';
 
 const Sections = observer(() => {
 	const { linkGetSections } = linksStore;
@@ -35,25 +38,30 @@ const Sections = observer(() => {
 	};
 
 	return (
-		<div>
-			<ArrowBackIosNewIcon
-				sx={{ color: '#007bfb', cursor: 'pointer' }}
-				onClick={() => navigate(`/admin/${object}`)}
-			/>
-			{sections.map(({ id, name, floors, flats, frame }) => {
-				return (
-					<div
-						key={id}
-						style={{ display: 'flex', flexDirection: 'column', cursor: 'pointer' }}
-						onClick={() => navigate(`/admin/${object}/${frame}/${id}`)}
-					>
-						<div>Секция {name}</div>
-						<div>Этажей: {floors}</div>
-						<div>Квартир на этаже: {flats}</div>
-					</div>
-				);
-			})}
-		</div>
+		<Box>
+			<div className={styles.title}>
+				<ArrowBackIosNewIcon
+					sx={{ color: '#007bfb', cursor: 'pointer' }}
+					onClick={() => navigate(`/admin/${object}`)}
+				/>
+				Выберите секцию
+			</div>
+
+			<Box sx={{ display: 'flex', flexWrap: 'wrap' }}>
+				{sections.map(({ id, name, floors, flats, frame }) => {
+					return (
+						<div key={id} className={styles.frame} onClick={() => navigate(`/admin/${object}/${frame}/${id}`)}>
+							<img className={styles.photo} src={photo} />
+							<div className={styles.titleSection}>
+								<div>Секция {name}</div>
+								<div>Кол-во этажей: {floors}</div>
+								<div>Квартир на этаже: {flats}</div>
+							</div>
+						</div>
+					);
+				})}
+			</Box>
+		</Box>
 	);
 });
 

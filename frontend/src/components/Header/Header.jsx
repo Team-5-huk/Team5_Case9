@@ -35,8 +35,6 @@ const Header = observer(() => {
 		<div className={styles.container}>
 			<img className={styles.logo} src={logo} onClick={handleNavigate} />
 
-			<div className={styles.title}>АНАЛИЗ ГОТОВНОСТИ ВЫПОЛНЕННЫХ РАБОТ</div>
-
 			{authUser && (
 				<div className={styles.account} onClick={accountNavigate}>
 					<PersonOutlineIcon />

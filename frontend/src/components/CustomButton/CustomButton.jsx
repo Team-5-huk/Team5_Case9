@@ -1,9 +1,13 @@
 import React from 'react';
 import styles from './CustomButton.module.scss';
 
-const CustomButton = ({ name, handleClick }) => {
+const CustomButton = ({ name, width, handleClick }) => {
 	return (
-		<button className={styles.btn} onClick={handleClick}>
+		<button 
+			style={{width}}
+			className={styles.btn} 
+			onClick={handleClick}
+		>
 			{name}
 		</button>
 	);

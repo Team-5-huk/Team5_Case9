@@ -25,7 +25,7 @@
 }
 
 .disk {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .disk_btns {
@@ -33,10 +33,12 @@
 }
 
 .diskUpload {
+	width: 150px;
+	display: flex;
+	justify-content: center;
 	border: 2px dashed #566885;
-	padding: 5px 10px;
+	padding: 10px 0;
 	cursor: pointer;
-	margin-left: 10px;
 }
 
 .diskInput {
@@ -53,3 +55,20 @@
 	align-items: center;
 	font-size: 40px;
   }
+
+.backVideo {
+	border-radius: 10px;
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.infoBlock {
+	max-width: 500px;
+	min-width: 300px;
+	display: flex;
+	flex-direction: column;
+
+	margin: 10px 0;
+
+	color: #007bfb;
+}

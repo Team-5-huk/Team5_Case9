@@ -1,0 +1,45 @@
+.title {
+	display: flex;
+	align-items: center;
+
+	margin: 10px 0;
+
+	font-size: 25px;
+
+	color: #007bfb;
+}
+
+.frame {
+	width: 350px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 10px 0;
+	font-size: 20px;
+	color: black;
+	cursor: pointer;
+
+	&:hover {
+		.photo {
+			opacity: 0.5;
+		}
+	}
+}
+
+.photo {
+	max-width: 90%;
+	border-radius: 10px;
+}
+
+.titleSection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	font-weight: 600;
+	font-size: 20px;
+
+	margin-bottom: 10px;
+	color: black;
+}
